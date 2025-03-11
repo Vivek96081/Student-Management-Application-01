@@ -2,6 +2,7 @@ package com.syansoft.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +17,9 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Email(message="Invalid Email ")
     private String email;
+
     @Column(nullable = false, length = 60)
     private String password;
 

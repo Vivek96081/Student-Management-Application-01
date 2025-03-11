@@ -8,7 +8,7 @@ import java.util.Date;
 @Component
 public class ScheduledTasks {
 
-    @Scheduled(fixedRate = 60000) // Run every minute
+    @Scheduled(fixedRate = 60000)
     public void reportCurrentTime() {
         System.out.println("Scheduled task executed at: " + new Date());
     }

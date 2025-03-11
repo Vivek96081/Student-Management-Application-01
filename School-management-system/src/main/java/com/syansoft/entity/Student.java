@@ -1,6 +1,8 @@
 package com.syansoft.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +14,9 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message="Name can not be Blank")
     private String name;
+    @Email(message="Invalid Email Format")
     private String email;
     @Column(nullable = false, length = 60)
     private String password;
